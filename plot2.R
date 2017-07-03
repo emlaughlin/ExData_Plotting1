@@ -22,12 +22,13 @@ dfSubset$DT <- strptime(z, "%Y-%m-%d %H:%M:%S")
 ##Begin Plot 2
 par(mfrow = c(1,1))
 with(dfSubset, plot(DT, Global_active_power, 
-                    ylab = "Global Active Power (kilowatts)"
+                    ylab = "Global Active Power (kilowatts)",
                     pch = ".",
                     type = "n",
                     xlab = ""))
 with(dfSubset, lines(DT, Global_active_power, type = "l"))
 
+##Copy to PNG file
 dev.copy(png, file = "plot2.png", width = 480, height = 480, units = "px")
 dev.off()
 
